@@ -1,0 +1,47 @@
+html {
+  background-color: #85dcb8;
+}
+
+#body {
+  background: #85dcb8;
+  overflow-y: hidden;
+  min-height: 100%;
+}
+
+#footer {
+  display:inline!important
+}
+
+h1, #coordinates {
+  text-align: center;
+  color: white;
+}
+
+#map {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+#explore {
+  background-color: #e27d60;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%
+}
+
+#map {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
