@@ -6,15 +6,21 @@ html {
   background: #85dcb8;
   overflow-y: hidden;
   min-height: 100%;
+  font-family: "Courier New", monospace;
 }
 
 #footer {
   display:inline!important
 }
 
-h1, #coordinates {
+#title, #coordinates, #city {
   text-align: center;
   color: white;
+}
+
+#title {
+  padding: 30px;
+  font-size: 80px;
 }
 
 #map {
