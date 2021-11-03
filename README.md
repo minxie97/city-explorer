@@ -39,3 +39,13 @@ Start time: 4:00pm
 Finish time: 7:50
 
 Actual time needed to complete: a little less than two hours. I took a pretty long break in between work.
+
+Name of feature: Rendering weather data & error handling
+
+Estimate of time needed to complete: 4+ hours
+
+Start time: 6:00pm
+
+Finish time: 11:52
+
+Actual time needed to complete: still not totally complete. errors not all there plus needs a lot of polish on the rendering side. 
