@@ -8,7 +8,7 @@ export default class Search extends Component {
         return (
             <div>
                 <Form id="search" onChange={this.props.handleChange} value={this.props.cityValue}>
-                    <Form.Group>
+                    <Form.Group >
                         <Form.Label>City</Form.Label>
                         <Form.Control type="text" placeholder="Enter city" />
                         <Form.Text className="text-muted">
