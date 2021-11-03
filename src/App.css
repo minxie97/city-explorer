@@ -13,7 +13,7 @@ html {
   display:inline!important
 }
 
-#title, #coordinates, #city {
+#title, #coordinates, #city, #weather {
   text-align: center;
   color: white;
 }
