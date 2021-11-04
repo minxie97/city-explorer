@@ -1,11 +1,14 @@
 import { Component } from "react";
 import axios from 'axios';
+import { Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import Search from './Search.js';
 import Error from './Error.js';
 import City from './City.js';
 import Coordinates from './Coordinates.js';
 import Map from './Map.js';
 import Weather from './Weather.js';
+import Movie from './Movie.js';
 
 export default class Main extends Component {
 
@@ -13,12 +16,11 @@ export default class Main extends Component {
     super(props);
     this.state = {
       cityValue: "",
-      cityName: "",
       location: "",
       mapData: "",
       weatherData: [],
+      movieData: [],
       error: false,
-      weatherError: ""
     }
   }
 
@@ -26,9 +28,9 @@ export default class Main extends Component {
     event.preventDefault();
     try {
       await this.changeLocation();
-      this.nameMutilater();
       this.getMap();
       this.getWeatherData();
+      this.getMovieData();
     } catch (e) {
       console.error(e);
       this.setState({ error: true })
@@ -53,20 +55,27 @@ export default class Main extends Component {
   }
 
   getWeatherData = async () => {
-    const url = `${process.env.REACT_APP_SERVER_URL}/weather?lat=${this.state.location.lat}&lon=${this.state.location.lon}&searchQuery=${this.state.cityName}`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/weather?lat=${this.state.location.lat}&lon=${this.state.location.lon}`;
     let response = await axios.get(url);
     if (typeof response === 'object') {
       this.setState({ weatherData: response.data });
     } else {
       this.setState({ weatherData: [] });
-      this.setState({ weatherError: response.data })
-      console.log(this.state.weatherError);
     }
   }
 
-  nameMutilater = () => {
-    let arr = this.state.location.display_name.split(",");
-    this.setState({ cityName: arr[0].toLowerCase() });
+  getMovieData = async () => {
+    const url = `${process.env.REACT_APP_SERVER_URL}/movie?searchQuery=${this.state.cityValue}`
+    let response = await axios.get(url);
+    let sortedResponse = response.data.sort((a, b) => b.popularity - a.popularity);
+    let shavedResponse = sortedResponse.slice(0, 3);
+    if (typeof response === 'object' && sortedResponse.length < 3) {
+      this.setState({ movieData: sortedResponse });
+    } else if (typeof response === 'object' && sortedResponse.length > 3) {
+      this.setState({ movieData: shavedResponse });
+    } else {
+      this.setState({ movieData: [] });
+    }
   }
 
   render() {
@@ -78,6 +87,11 @@ export default class Main extends Component {
         <Coordinates location={this.state.location} />
         <Map mapData={this.state.mapData} />
         <Weather weatherData={this.state.weatherData} />
+        <Container fluid>
+          <Row>
+            {this.state.movieData.map(movie => <Movie movieData={movie} />)}
+          </Row> 
+        </Container>
       </div>
     )
   }

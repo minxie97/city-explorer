@@ -23,7 +23,7 @@ html {
   font-size: 80px;
 }
 
-#map {
+#map, .container {
   display: block;
   margin-left: auto;
   margin-right: auto;
