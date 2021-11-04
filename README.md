@@ -9,6 +9,9 @@ Application built using React that allows users to search U.S cities and receive
 ## Getting Started
 1. Set up React repo and API keys
 2. Return location (coordinates) and map when user inputs city.
+3. Return map image
+4. Return weather data
+5. Return movie data
 
 ## Architecture
 Header
@@ -19,12 +22,15 @@ Main
   * City
   * Coordinates
   * Map
+  * Weather status
+  * Movie data
 Footer
 
 <img width="875" alt="Screen Shot 2021-11-01 at 3 39 14 PM" src="https://user-images.githubusercontent.com/89370759/139779881-7935aa2e-89ec-4a91-a2b5-eb1489a6e99e.png">
 
 ## Change Log
 2021-11-1 7:50pm: Finished feature tasks
+2021-11-3 10:30pm: App displays city, coordinates, map image, weather data, and movie info when city is searched.
 
 ## Credit and Collaborations
 Created workflow diagram with Raaj, Soni, and Joey
@@ -49,3 +55,13 @@ Start time: 6:00pm
 Finish time: 11:52
 
 Actual time needed to complete: still not totally complete. errors not all there plus needs a lot of polish on the rendering side. 
+
+Name of feature: Rendering real weather data and movie data
+
+Estimate of time needed to complete: 2+ hours
+
+Start time: 6:00pm
+
+Finish time: 10:30 
+
+Actual time needed to complete: Actually only took about 1 and a hours. Took a big break. A lot easier compared to yesterday.
