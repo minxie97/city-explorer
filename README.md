@@ -27,6 +27,7 @@ Main
 Footer
 
 <img width="875" alt="Screen Shot 2021-11-01 at 3 39 14 PM" src="https://user-images.githubusercontent.com/89370759/139779881-7935aa2e-89ec-4a91-a2b5-eb1489a6e99e.png">
+<img width="875" src="https://user-images.githubusercontent.com/89370759/140448633-e4d71efe-e2d2-461f-85a5-f7a223c65e20.jpg">
 
 ## Change Log
 2021-11-1 7:50pm: Finished feature tasks
@@ -34,6 +35,7 @@ Footer
 
 ## Credit and Collaborations
 Created workflow diagram with Raaj, Soni, and Joey
+Worked with Ben on diagram 2
 
 ## Time Estimates 
 Name of feature: Return coordinates and map
@@ -65,3 +67,13 @@ Start time: 6:00pm
 Finish time: 10:30 
 
 Actual time needed to complete: Actually only took about 1 and a hours. Took a big break. A lot easier compared to yesterday.
+
+Name of feature: Refactoring and cleaning code
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 6:00pm
+
+Finish time: 6:30pm
+
+Actual time needed to complete: 30 minutes.
