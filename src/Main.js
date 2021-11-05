@@ -1,14 +1,10 @@
 import { Component } from "react";
 import axios from 'axios';
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
 import Search from './Search.js';
 import Error from './Error.js';
-import City from './City.js';
-import Coordinates from './Coordinates.js';
-import Map from './Map.js';
+import CityCard from './CityCard.js';
 import Weather from './Weather.js';
-import Movie from './Movie.js';
+import Movies from './Movies.js';
 
 export default class Main extends Component {
 
@@ -43,14 +39,13 @@ export default class Main extends Component {
 
   changeLocation = async () => {
     const urlLoc = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityValue}&format=json`;
-
     let response = await axios.get(urlLoc);
     this.setState({ location: response.data[0] });
   }
 
   getMap = () => {
+    this.setState({ mapData: "" });
     const urlMap = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12`;
-
     this.setState({ mapData: urlMap });
   }
 
@@ -83,15 +78,9 @@ export default class Main extends Component {
       <div>
         <Search handleClick={this.handleClick} handleChange={this.handleChange} cityValue={this.state.cityValue} />
         <Error error={this.state.error} />
-        <City location={this.state.location} />
-        <Coordinates location={this.state.location} />
-        <Map mapData={this.state.mapData} />
+        {this.state.mapData && <CityCard location={this.state.location} mapData={this.state.mapData} />}
         <Weather weatherData={this.state.weatherData} />
-        <Container fluid>
-          <Row>
-            {this.state.movieData.map(movie => <Movie movieData={movie} />)}
-          </Row> 
-        </Container>
+        <Movies movieData={this.state.movieData} />
       </div>
     )
   }

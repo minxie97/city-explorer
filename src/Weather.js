@@ -1,11 +1,18 @@
 import { Component } from 'react';
+import WeatherDay from './WeatherDay';
+import { Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 export default class Weather extends Component {
 
     render() {
         return (
             <div>
-                {this.props.weatherData.length > 0 && this.props.weatherData.map(element => <p id="weather">{element.date}: {element.description}</p>)}
+                <Container fluid>
+                    <Row>
+                        {this.props.weatherData.map(day => <WeatherDay weatherData={day} />)};
+                    </Row>
+                </Container>
             </div>
         )
     }
