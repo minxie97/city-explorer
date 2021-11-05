@@ -5,6 +5,7 @@ import Error from './Error.js';
 import CityCard from './CityCard.js';
 import Weather from './Weather.js';
 import Movies from './Movies.js';
+import Yelp from "./Yelp.js";
 
 export default class Main extends Component {
 
@@ -16,6 +17,7 @@ export default class Main extends Component {
       mapData: "",
       weatherData: [],
       movieData: [],
+      yelpData: [],
       error: false,
     }
   }
@@ -27,6 +29,7 @@ export default class Main extends Component {
       this.getMap();
       this.getWeatherData();
       this.getMovieData();
+      this.getYelpData();
     } catch (e) {
       console.error(e);
       this.setState({ error: true })
@@ -73,14 +76,25 @@ export default class Main extends Component {
     }
   }
 
+  getYelpData = async () => {
+    const url = `${process.env.REACT_APP_SERVER_URL}/yelp?searchQuery=${this.state.cityValue}`
+    let response = await axios.get(url);
+    if (typeof response === 'object') {
+      this.setState({ yelpData: response.data });
+    } else {
+      this.setState({ yelpData: [] });
+    }
+  }
+
   render() {
     return (
       <div>
         <Search handleClick={this.handleClick} handleChange={this.handleChange} cityValue={this.state.cityValue} />
         <Error error={this.state.error} />
         {this.state.mapData && <CityCard location={this.state.location} mapData={this.state.mapData} />}
-        <Weather weatherData={this.state.weatherData} />
-        <Movies movieData={this.state.movieData} />
+        {this.state.weatherData.length > 0 && <Weather weatherData={this.state.weatherData} />}
+        {this.state.movieData.length > 0 && <Movies movieData={this.state.movieData} />}
+        {this.state.yelpData.length > 0 && <Yelp yelpData={this.state.yelpData} />}
       </div>
     )
   }
