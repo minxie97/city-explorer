@@ -13,20 +13,12 @@ html {
   display:inline!important
 }
 
-#title, #coordinates, #city, #weather {
-  text-align: center;
-  color: white;
-}
-
 #title {
-  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  padding: 25px;
   font-size: 80px;
-}
-
-#map, .container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #search {
@@ -48,6 +40,13 @@ html {
   width: 100%
 }
 
-#map {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+#card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
