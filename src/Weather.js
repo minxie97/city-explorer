@@ -10,7 +10,7 @@ export default class Weather extends Component {
             <div>
                 <Container fluid>
                     <Row>
-                        {this.props.weatherData.map(day => <WeatherDay weatherData={day} />)};
+                        {this.props.weatherData.map(day => <WeatherDay weatherData={day} />)}
                     </Row>
                 </Container>
             </div>

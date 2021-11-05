@@ -11,7 +11,7 @@ export default class Movie extends Component {
                 <Card.Img variant="top" src={this.props.movieData.imageUrl} />
                     <Card.Title>{this.props.movieData.title}</Card.Title>
                     <Card.Text>
-                        {this.props.movieData.overview};
+                        {this.props.movieData.overview}
                     </Card.Text>
                 </Card.Body>
             </Card>
