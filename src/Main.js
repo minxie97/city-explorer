@@ -18,6 +18,7 @@ export default class Main extends Component {
       weatherData: [],
       movieData: [],
       yelpData: [],
+      yelpSearch: "",
       error: false,
     }
   }
@@ -26,6 +27,7 @@ export default class Main extends Component {
     event.preventDefault();
     try {
       await this.changeLocation();
+      this.nameMutilater();
       this.getMap();
       this.getWeatherData();
       this.getMovieData();
@@ -38,6 +40,11 @@ export default class Main extends Component {
 
   handleChange = (event) => {
     this.setState({ cityValue: event.target.value });
+  }
+
+  nameMutilater = () => {
+    let arr = this.state.location.display_name.split(",");
+    this.setState({ yelpSearch: arr[0] });
   }
 
   changeLocation = async () => {
@@ -77,7 +84,7 @@ export default class Main extends Component {
   }
 
   getYelpData = async () => {
-    const url = `${process.env.REACT_APP_SERVER_URL}/yelp?searchQuery=${this.state.cityValue}`
+    const url = `${process.env.REACT_APP_SERVER_URL}/yelp?city=${this.state.yelpSearch}`
     let response = await axios.get(url);
     if (typeof response === 'object') {
       this.setState({ yelpData: response.data });

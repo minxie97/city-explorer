@@ -77,3 +77,15 @@ Start time: 6:00pm
 Finish time: 6:30pm
 
 Actual time needed to complete: 30 minutes.
+
+
+Name of feature: Yelp functionality and cache
+
+Estimate of time needed to complete: 2
+
+Start time: 3:00pm
+
+Finish time: 6:30pm
+
+Actual time needed to complete: Yelp took the majority of the time. It took about 45 minutes to do the caches.
+
