@@ -28,6 +28,7 @@ Footer
 
 <img width="875" alt="Screen Shot 2021-11-01 at 3 39 14 PM" src="https://user-images.githubusercontent.com/89370759/139779881-7935aa2e-89ec-4a91-a2b5-eb1489a6e99e.png">
 <img width="875" src="https://user-images.githubusercontent.com/89370759/140448633-e4d71efe-e2d2-461f-85a5-f7a223c65e20.jpg">
+<img width="875" src="https://user-images.githubusercontent.com/89370759/140684100-fc7bf622-1be2-452c-a172-a0fcf4667c36.jpg">
 
 ## Change Log
 2021-11-1 7:50pm: Finished feature tasks
